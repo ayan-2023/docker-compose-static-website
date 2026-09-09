@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CloudOps Infrastructure Dashboard - Visual demonstration of cloud infrastructure, containerization, and automated application deployment workflows.">
+  <title>CloudOps Infrastructure Dashboard</title>
+  
+  <!-- Relative Stylesheet Link -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230088ff'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'/></svg>">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. Navigation Bar
+       ========================================== -->
+  <header class="header" id="navbar">
+    <div class="container nav-container">
+      <a href="#overview" class="brand" aria-label="CloudOps Dashboard Home">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-.01M3 15a4 4 0 011-7.87 5 5 0 019.8-1.74A4.001 4.001 0 0119 13.99M3 15h16" />
+          </svg>
+        </div>
+        <span>CloudOps Dashboard</span>
+      </a>
+
+      <div class="status-badge-nav" id="navSystemStatus">
+        <span class="pulse-dot"></span>
+        <span>Demo Environment</span>
+      </div>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#overview" class="nav-link active">Overview</a></li>
+          <li><a href="#infrastructure" class="nav-link">Infrastructure</a></li>
+          <li><a href="#deployment" class="nav-link">Deployment</a></li>
+          <li><a href="#technologies" class="nav-link">Technologies</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         2. Hero Section
+         ========================================== -->
+    <section class="dashboard-section hero-section" id="overview">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="section-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Infrastructure Dashboard
+          </div>
+          <h1>DevOps Infrastructure <span>Dashboard</span></h1>
+          <p class="hero-subtitle">
+            A visual demonstration of cloud infrastructure, containerization, and automated application deployment workflows.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#infrastructure" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              View Infrastructure
+            </a>
+            <a href="#deployment" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+              View Deployment Flow
+            </a>
+          </div>
+        </div>
+
+        <!-- Summary Panel Card -->
+        <div class="summary-panel">
+          <div class="card-header-bar">
+            <div class="card-title-group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <h3 class="card-title">Environment Summary</h3>
+            </div>
+            <span class="demo-badge-small">DEMO</span>
+          </div>
+
+          <div class="spec-grid">
+            <div class="spec-item">
+              <span class="spec-label">Cloud</span>
+              <span class="spec-value">Microsoft Azure</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">OS</span>
+              <span class="spec-value">Linux</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Container Platform</span>
+              <span class="spec-value">Docker</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Web Server</span>
+              <span class="spec-value">Nginx</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. Infrastructure Overview Section
+         ========================================== -->
+    <section class="dashboard-section" id="infrastructure">
+      <div class="container">
+        <div class="infra-header-group">
+          <div>
+            <div class="section-tag">Core Components</div>
+            <h2 class="section-title">Infrastructure Overview</h2>
+          </div>
+          <span class="demo-status-label">Demo Status</span>
+        </div>
+        <p class="section-subtitle">Visual overview of virtualized compute, container engine, web proxy, and static application service states.</p>
+
+        <div class="infra-grid">
+          <!-- Card 1: Azure Virtual Machine -->
+          <div class="infra-card">
+            <div class="infra-card-top">
+              <div class="infra-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+              <span class="status-tag running">RUNNING</span>
+            </div>
+            <div>
+              <h3 class="infra-name">Azure Virtual Machine</h3>
+              <p class="infra-desc">Linux-based compute environment for application hosting.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Docker Engine -->
+          <div class="infra-card">
+            <div class="infra-card-top">
+              <div class="infra-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <span class="status-tag running">RUNNING</span>
+            </div>
+            <div>
+              <h3 class="infra-name">Docker Engine</h3>
+              <p class="infra-desc">Container runtime used to package and run the application.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Nginx -->
+          <div class="infra-card">
+            <div class="infra-card-top">
+              <div class="infra-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span class="status-tag running">RUNNING</span>
+            </div>
+            <div>
+              <h3 class="infra-name">Nginx</h3>
+              <p class="infra-desc">Lightweight web server used to serve application content.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Application -->
+          <div class="infra-card">
+            <div class="infra-card-top">
+              <div class="infra-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span class="status-tag healthy">HEALTHY</span>
+            </div>
+            <div>
+              <h3 class="infra-name">Application</h3>
+              <p class="infra-desc">Containerized frontend application.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. Demo System Metrics Section
+         ========================================== -->
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="metrics-header">
+          <div>
+            <div class="section-tag">Telemetry</div>
+            <h2 class="section-title">System Metrics</h2>
+          </div>
+          <div class="sample-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Sample Data
+          </div>
+        </div>
+        <p class="section-subtitle">Static demonstration resource metrics representing compute node capacity.</p>
+
+        <div class="metrics-grid">
+          <!-- CPU Usage -->
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-title">CPU Usage</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--azure-bright)" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <div class="metric-val">32%</div>
+            <div class="progress-bar-container">
+              <div class="progress-fill azure" data-target="32"></div>
+            </div>
+            <div class="metric-footer-text">
+              <span>Host CPU Utilization</span>
+              <span>Normal</span>
+            </div>
+          </div>
+
+          <!-- Memory Usage -->
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Memory Usage</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-cyan)" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div class="metric-val">58%</div>
+            <div class="progress-bar-container">
+              <div class="progress-fill cyan" data-target="58"></div>
+            </div>
+            <div class="metric-footer-text">
+              <span>RAM Allocation</span>
+              <span>Optimal</span>
+            </div>
+          </div>
+
+          <!-- Disk Usage -->
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Disk Usage</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-purple)" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+              </svg>
+            </div>
+            <div class="metric-val">41%</div>
+            <div class="progress-bar-container">
+              <div class="progress-fill purple" data-target="41"></div>
+            </div>
+            <div class="metric-footer-text">
+              <span>Storage Partition</span>
+              <span>Healthy</span>
+            </div>
+          </div>
+
+          <!-- Uptime -->
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-title">Uptime</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--status-green)" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="metric-val">2d 14h</div>
+            <div class="progress-bar-container">
+              <div class="progress-fill green" data-target="100"></div>
+            </div>
+            <div class="metric-footer-text">
+              <span>System Availability</span>
+              <span>100% Up</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. Deployment Flow Section
+         ========================================== -->
+    <section class="dashboard-section" id="deployment">
+      <div class="container">
+        <div class="section-tag">Lifecycle Flow</div>
+        <h2 class="section-title">Application Deployment Flow</h2>
+        <p class="section-subtitle">Sequential stage progression from local source code commit to containerized Nginx serving on Azure.</p>
+
+        <div class="flow-wrapper">
+          <div class="flow-steps-grid">
+            <div class="flow-step-item">
+              <div class="flow-node-card">Code</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Git</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">GitHub</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Docker Build</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Docker Image</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Azure VM</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Docker Container</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card">Nginx</div>
+              <span class="flow-arrow">&rarr;</span>
+            </div>
+            <div class="flow-step-item">
+              <div class="flow-node-card" style="border-color: var(--status-green); color: var(--status-green);">Application</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. Application Architecture Section
+         ========================================== -->
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="section-tag">System Topology</div>
+        <h2 class="section-title">Application Architecture</h2>
+        <p class="section-subtitle">Responsive pure HTML/CSS diagram illustrating ingress request routing into container runtime.</p>
+
+        <div class="arch-container">
+          <div class="arch-flow-diagram">
+            <!-- Node 1 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Internet</div>
+                  <div class="arch-node-desc">Client Web Browsers & External Traffic</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">HTTP / HTTPS</span>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-arrow-connector">
+              <span class="connector-label">Public Route</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-.01M3 15a4 4 0 011-7.87 5 5 0 019.8-1.74A4.001 4.001 0 0119 13.99M3 15h16" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Azure Public IP</div>
+                  <div class="arch-node-desc">Cloud Static IP & Network Security Group</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">Port 80</span>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-arrow-connector">
+              <span class="connector-label">VM Ingress</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Azure Linux VM</div>
+                  <div class="arch-node-desc">Ubuntu Linux Operating System Host</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">Host Machine</span>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-arrow-connector">
+              <span class="connector-label">Container Bridge</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+
+            <!-- Node 4 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Docker Engine</div>
+                  <div class="arch-node-desc">Container Runtime Engine</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">Daemon</span>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-arrow-connector">
+              <span class="connector-label">Web Proxy</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+
+            <!-- Node 5 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Nginx Container</div>
+                  <div class="arch-node-desc">Isolated Web Server Container Instance</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">Port 80</span>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-arrow-connector">
+              <span class="connector-label">Static Delivery</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+
+            <!-- Node 6 -->
+            <div class="arch-node">
+              <div class="arch-node-left">
+                <div class="arch-node-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="arch-node-title">Static Web Application</div>
+                  <div class="arch-node-desc">HTML5 / CSS3 / Vanilla JS Static Frontend</div>
+                </div>
+              </div>
+              <span class="arch-port-badge">Frontend UI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. Technology Stack Section
+         ========================================== -->
+    <section class="dashboard-section" id="technologies">
+      <div class="container">
+        <div class="section-tag">DevOps Tools</div>
+        <h2 class="section-title">Technology Stack</h2>
+        <p class="section-subtitle">Core platforms, container systems, and frontend standards used in this project.</p>
+
+        <div class="tech-grid">
+          <!-- Tech 1: Azure -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-.01M3 15a4 4 0 011-7.87 5 5 0 019.8-1.74A4.001 4.001 0 0119 13.99M3 15h16" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Microsoft Azure</h4>
+              <p>Cloud platform hosting virtual compute and networking resources.</p>
+            </div>
+          </div>
+
+          <!-- Tech 2: Docker -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Docker</h4>
+              <p>Containerization engine packaging applications into lightweight images.</p>
+            </div>
+          </div>
+
+          <!-- Tech 3: Nginx -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Nginx</h4>
+              <p>High-performance web server delivering static frontend assets.</p>
+            </div>
+          </div>
+
+          <!-- Tech 4: Linux -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Linux</h4>
+              <p>Ubuntu Linux operating system hosting the containerized environment.</p>
+            </div>
+          </div>
+
+          <!-- Tech 5: Bash -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Bash</h4>
+              <p>Shell scripting environment for system automation and container setup.</p>
+            </div>
+          </div>
+
+          <!-- Tech 6: Git -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>Git</h4>
+              <p>Version control system for source code management and tracking.</p>
+            </div>
+          </div>
+
+          <!-- Tech 7: GitHub -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>GitHub</h4>
+              <p>Cloud repository platform storing code and triggering CI/CD.</p>
+            </div>
+          </div>
+
+          <!-- Tech 8: HTML5 -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>HTML5</h4>
+              <p>Semantic markup language structuring web dashboard content.</p>
+            </div>
+          </div>
+
+          <!-- Tech 9: CSS3 -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>CSS3</h4>
+              <p>Modern design system providing responsive styling and animations.</p>
+            </div>
+          </div>
+
+          <!-- Tech 10: JavaScript -->
+          <div class="tech-card">
+            <div class="tech-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div class="tech-info">
+              <h4>JavaScript</h4>
+              <p>Client-side scripting enabling interactive navigation and animations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         8. Projects Section
+         ========================================== -->
+    <section class="dashboard-section" id="projects">
+      <div class="container">
+        <div class="section-tag">DevOps Portfolio</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Practical cloud infrastructure, security, and containerization projects.</p>
+
+        <div class="projects-grid">
+          <!-- Project 01 -->
+          <div class="project-card">
+            <div>
+              <span class="project-tag-num">PROJECT 01</span>
+              <h3 class="project-title">Azure Secure Infrastructure Foundation</h3>
+              <p class="project-desc">
+                Secure Azure infrastructure foundation designed using Terraform with networking, security, monitoring, governance, remote state, and reusable modules.
+              </p>
+              
+              <div class="tech-pill-group">
+                <span class="tech-pill">Azure</span>
+                <span class="tech-pill">Terraform</span>
+                <span class="tech-pill">Key Vault</span>
+                <span class="tech-pill">Azure Monitor</span>
+                <span class="tech-pill">Azure Policy</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-secondary project-btn">
+              <span>View Project</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Project 02 -->
+          <div class="project-card">
+            <div>
+              <span class="project-tag-num">PROJECT 02</span>
+              <h3 class="project-title">DevSecOps Compliance Pipeline</h3>
+              <p class="project-desc">
+                Terraform security and validation pipeline designed to detect configuration issues, security vulnerabilities, and exposed secrets before deployment.
+              </p>
+              
+              <div class="tech-pill-group">
+                <span class="tech-pill">Terraform</span>
+                <span class="tech-pill">GitHub Actions</span>
+                <span class="tech-pill">Checkov</span>
+                <span class="tech-pill">tfsec</span>
+                <span class="tech-pill">TFLint</span>
+                <span class="tech-pill">Gitleaks</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-secondary project-btn">
+              <span>View Project</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Project 03 -->
+          <div class="project-card">
+            <div>
+              <span class="project-tag-num">PROJECT 03</span>
+              <h3 class="project-title">Dockerized Web Application</h3>
+              <p class="project-desc">
+                Static web application designed to be containerized using Docker and served through Nginx on a Linux environment.
+              </p>
+              
+              <div class="tech-pill-group">
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">Nginx</span>
+                <span class="tech-pill">Linux</span>
+                <span class="tech-pill">Bash</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-secondary project-btn">
+              <span>View Project</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         9. About Section
+         ========================================== -->
+    <section class="dashboard-section" id="about">
+      <div class="container">
+        <div class="about-box">
+          <div class="section-tag">Project Purpose</div>
+          <h2 class="section-title">About This Dashboard</h2>
+          
+          <p class="about-text-p">
+            This dashboard is a static frontend created to demonstrate DevOps concepts including cloud infrastructure, containerization, Linux-based deployment, and application delivery workflows.
+          </p>
+
+          <p class="about-text-p">
+            The application is intentionally lightweight so it can be containerized using Docker and served through Nginx as part of a practical DevOps deployment project.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       10. Footer
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#overview" class="brand">
+            <div class="brand-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-.01M3 15a4 4 0 011-7.87 5 5 0 019.8-1.74A4.001 4.001 0 0119 13.99M3 15h16" />
+              </svg>
+            </div>
+            <span>CloudOps Dashboard</span>
+          </a>
+          <p class="footer-text">Built to demonstrate practical DevOps and cloud engineering concepts.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#" class="footer-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="#" class="footer-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CloudOps Infrastructure Dashboard • Built to demonstrate practical DevOps concepts</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Relative JavaScript Link -->
+  <script src="js/app.js"></script>
+</body>
+</html>
